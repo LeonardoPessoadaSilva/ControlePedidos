@@ -188,12 +188,20 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="uJPanelImagem1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="uJPanelImagem1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="uJPanelImagem1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="uJPanelImagem1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -210,14 +218,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jpMenuRapido" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="566" max="32767" attributes="0"/>
+                  <Component id="jpMenuRapido" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jpMenuRapido" alignment="1" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jpMenuRapido" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="325" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -238,32 +249,28 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <Component id="btClientes" min="-2" pref="143" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btFornecedores" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btProdutos" min="-2" pref="142" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btRegistrarVenda" min="-2" pref="149" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btFornecedores" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btProdutos" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btClientes" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btConsultarVenda" alignment="0" pref="231" max="32767" attributes="0"/>
-                          <Component id="btRegistrarVenda" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="btConsultarVenda" min="-2" pref="147" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btClientes" min="-2" pref="69" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btProdutos" min="-2" pref="69" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btFornecedores" min="-2" pref="69" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btConsultarVenda" min="-2" pref="69" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btRegistrarVenda" min="-2" pref="69" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" max="-2" attributes="0">
+                      <Component id="btRegistrarVenda" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btConsultarVenda" alignment="3" max="32767" attributes="0"/>
+                      <Component id="btProdutos" alignment="3" max="32767" attributes="0"/>
+                      <Component id="btFornecedores" alignment="3" max="32767" attributes="0"/>
+                      <Component id="btClientes" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -272,7 +279,7 @@
             <Component class="javax.swing.JButton" name="btClientes">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/24x24/User group.png"/>
+                  <Image iconType="3" name="/imagens/24x24/Male.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Clientes"/>
               </Properties>
@@ -283,7 +290,7 @@
             <Component class="javax.swing.JButton" name="btProdutos">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/24x24/Component.png"/>
+                  <Image iconType="3" name="/imagens/24x24/Modify.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Produtos"/>
               </Properties>
@@ -294,7 +301,7 @@
             <Component class="javax.swing.JButton" name="btFornecedores">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/24x24/Boss.png"/>
+                  <Image iconType="3" name="/imagens/24x24/Home.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fornecedores"/>
               </Properties>
@@ -305,7 +312,7 @@
             <Component class="javax.swing.JButton" name="btConsultarVenda">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/24x24/Search.png"/>
+                  <Image iconType="3" name="/imagens/24x24/Zoom.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Consultar Pedidos"/>
               </Properties>
