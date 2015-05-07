@@ -99,7 +99,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btRegistrarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/24x24/Shopping cart.png"))); // NOI18N
+        btRegistrarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/24x24/Dollar.png"))); // NOI18N
         btRegistrarVenda.setText("Registrar Pedido");
         btRegistrarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -323,7 +323,7 @@
             <Component class="javax.swing.JButton" name="btRegistrarVenda">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagens/24x24/Shopping cart.png"/>
+                  <Image iconType="3" name="/imagens/24x24/Dollar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Pedido"/>
               </Properties>
