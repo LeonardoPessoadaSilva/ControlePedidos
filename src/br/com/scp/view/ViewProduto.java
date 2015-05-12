@@ -1,21 +1,21 @@
 package br.com.scp.view;
 
-import br.com.scp.controller.ControllerFornecedor;
-import br.com.scp.controller.ControllerProdutos;
+import br.com.scp.facade.ControllerFornecedor;
+import br.com.scp.facade.ControllerProdutos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import br.com.scp.model.ModelFornecedor;
-import br.com.scp.model.ModelProdutos;
+import br.com.scp.model.Fornecedor;
+import br.com.scp.model.Produtos;
 
 
 public class ViewProduto extends javax.swing.JFrame {
 
-    ModelProdutos modelProdutos = new ModelProdutos();
+    Produtos modelProdutos = new Produtos();
     ControllerProdutos controllerProdutos = new ControllerProdutos();
     ControllerFornecedor controllerFornecedor = new ControllerFornecedor();
-    ArrayList<ModelProdutos> listamModelProdutos = new ArrayList<ModelProdutos>();
-    ArrayList<ModelFornecedor> listaFornecedor = new ArrayList<ModelFornecedor>();
+    ArrayList<Produtos> listamModelProdutos = new ArrayList<Produtos>();
+    ArrayList<Fornecedor> listaFornecedor = new ArrayList<Fornecedor>();
     String tipoCadastro;
     
     

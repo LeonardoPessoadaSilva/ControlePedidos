@@ -1,6 +1,6 @@
-package br.com.scp.controller;
+package br.com.scp.facade;
 
-import br.com.scp.model.ModelFornecedor;
+import br.com.scp.model.Fornecedor;
 import br.com.scp.DAO.DAOFornecedor;
 import java.util.ArrayList;
 
@@ -12,27 +12,27 @@ public class ControllerFornecedor {
     
 
     
-    public int salvarFornecedorController(ModelFornecedor pModelFornecedor){
+    public int salvarFornecedorController(Fornecedor pModelFornecedor){
         return this.daoFornecedor.salvarFornecedorDAO(pModelFornecedor);
     }
 
     
-    public ModelFornecedor getFornecedorController(int pCodigo){
+    public Fornecedor getFornecedorController(int pCodigo){
         return this.daoFornecedor.getFornecedorDAO(pCodigo);
     }
     
     
-    public ModelFornecedor getFornecedorController(String pNome){
+    public Fornecedor getFornecedorController(String pNome){
         return this.daoFornecedor.getFornecedorDAO(pNome);
     }
 
     
-    public ArrayList<ModelFornecedor> getListaFornecedorController(){
+    public ArrayList<Fornecedor> getListaFornecedorController(){
         return this.daoFornecedor.getListaFornecedorDAO();
     }
 
     
-    public boolean atualizarFornecedorController(ModelFornecedor pModelFornecedor){
+    public boolean atualizarFornecedorController(Fornecedor pModelFornecedor){
         return this.daoFornecedor.atualizarFornecedorDAO(pModelFornecedor);
     }
 

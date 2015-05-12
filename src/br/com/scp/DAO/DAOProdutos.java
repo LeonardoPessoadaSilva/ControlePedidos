@@ -1,13 +1,13 @@
 package br.com.scp.DAO;
 
 import br.com.scp.conexoes.ConnectionFactory;
-import br.com.scp.model.ModelProdutos;
+import br.com.scp.model.Produtos;
 import java.util.ArrayList;
 
 public class DAOProdutos extends ConnectionFactory {
 
     
-    public int salvarProdutosDAO(ModelProdutos pModelProdutos){
+    public int salvarProdutosDAO(Produtos pModelProdutos){
         try {
             this.conectar();
             return this.insertSQL(
@@ -32,8 +32,8 @@ public class DAOProdutos extends ConnectionFactory {
     }
 
    
-    public ModelProdutos getProdutosDAO(int pCodigo){
-        ModelProdutos modelProdutos = new ModelProdutos();
+    public Produtos getProdutosDAO(int pCodigo){
+        Produtos modelProdutos = new Produtos();
         try {
             this.conectar();
             this.executarSQL(
@@ -66,8 +66,8 @@ public class DAOProdutos extends ConnectionFactory {
     }
     
    
-    public ModelProdutos getProdutosDAO(String pNome){
-        ModelProdutos modelProdutos = new ModelProdutos();
+    public Produtos getProdutosDAO(String pNome){
+        Produtos modelProdutos = new Produtos();
         try {
             this.conectar();
             this.executarSQL(
@@ -100,9 +100,9 @@ public class DAOProdutos extends ConnectionFactory {
     }
 
     
-    public ArrayList<ModelProdutos> getListaProdutosDAO(){
-        ArrayList<ModelProdutos> listamodelProdutos = new ArrayList();
-        ModelProdutos modelProdutos = new ModelProdutos();
+    public ArrayList<Produtos> getListaProdutosDAO(){
+        ArrayList<Produtos> listamodelProdutos = new ArrayList();
+        Produtos modelProdutos = new Produtos();
         try {
             this.conectar();
             this.executarSQL(
@@ -118,7 +118,7 @@ public class DAOProdutos extends ConnectionFactory {
             );
 
             while(this.getResultSet().next()){
-                modelProdutos = new ModelProdutos();
+                modelProdutos = new Produtos();
                 modelProdutos.setCodigo(this.getResultSet().getInt(1));
                 modelProdutos.setFornecedoresCodigo(this.getResultSet().getInt(2));
                 modelProdutos.setNome(this.getResultSet().getString(3));
@@ -135,7 +135,7 @@ public class DAOProdutos extends ConnectionFactory {
     }
 
     
-    public boolean atualizarProdutosDAO(ModelProdutos pModelProdutos){
+    public boolean atualizarProdutosDAO(Produtos pModelProdutos){
         try {
             this.conectar();
             this.executarUpdateSQL(
@@ -159,7 +159,7 @@ public class DAOProdutos extends ConnectionFactory {
     }
     
    
-    public boolean atualizarProdutosQuantidadeDAO(ModelProdutos pModelProdutos){
+    public boolean atualizarProdutosQuantidadeDAO(Produtos pModelProdutos){
         try {
             this.conectar();
             System.out.println(pModelProdutos.getListaModelProdutoses().size());

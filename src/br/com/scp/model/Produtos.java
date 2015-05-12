@@ -3,17 +3,17 @@ package br.com.scp.model;
 import java.util.ArrayList;
 
 
-public class ModelProdutos {
+public class Produtos {
 
     private int codigo;
     private int fornecedoresCodigo;
     private String nome;
     private Double valor;
     private int estoque;
-    private ArrayList<ModelProdutos> listaModelProdutoses;
+    private ArrayList<Produtos> listaModelProdutoses;
 
    
-    public ModelProdutos(){}
+    public Produtos(){}
 
    
     public void setCodigo(int pCodigo){
@@ -66,12 +66,12 @@ public class ModelProdutos {
     }
 
     
-    public ArrayList<ModelProdutos> getListaModelProdutoses() {
+    public ArrayList<Produtos> getListaModelProdutoses() {
         return listaModelProdutoses;
     }
 
     
-    public void setListaModelProdutoses(ArrayList<ModelProdutos> listaModelProdutoses) {
+    public void setListaModelProdutoses(ArrayList<Produtos> listaModelProdutoses) {
         this.listaModelProdutoses = listaModelProdutoses;
     }
 }

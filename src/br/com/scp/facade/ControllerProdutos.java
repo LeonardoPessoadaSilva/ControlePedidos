@@ -1,6 +1,6 @@
-package br.com.scp.controller;
+package br.com.scp.facade;
 
-import br.com.scp.model.ModelProdutos;
+import br.com.scp.model.Produtos;
 import br.com.scp.DAO.DAOProdutos;
 import java.util.ArrayList;
 
@@ -11,27 +11,27 @@ public class ControllerProdutos {
     private DAOProdutos daoProdutos = new DAOProdutos();
    
     
-    public int salvarProdutosController(ModelProdutos pModelProdutos){
+    public int salvarProdutosController(Produtos pModelProdutos){
         return this.daoProdutos.salvarProdutosDAO(pModelProdutos);
     }
 
     
-    public ModelProdutos getProdutosController(int pCodigo){
+    public Produtos getProdutosController(int pCodigo){
         return this.daoProdutos.getProdutosDAO(pCodigo);
     }
     
    
-    public ModelProdutos getProdutosController(String pNome){
+    public Produtos getProdutosController(String pNome){
         return this.daoProdutos.getProdutosDAO(pNome);
     }
 
     
-    public ArrayList<ModelProdutos> getListaProdutosController(){
+    public ArrayList<Produtos> getListaProdutosController(){
         return this.daoProdutos.getListaProdutosDAO();
     }
 
     
-    public boolean atualizarProdutosController(ModelProdutos pModelProdutos){
+    public boolean atualizarProdutosController(Produtos pModelProdutos){
         return this.daoProdutos.atualizarProdutosDAO(pModelProdutos);
     }
 
@@ -41,7 +41,7 @@ public class ControllerProdutos {
     }
 
    
-    public boolean atualizarProdutosQuantidadeController(ModelProdutos pModelProdutos){
+    public boolean atualizarProdutosQuantidadeController(Produtos pModelProdutos){
         return this.daoProdutos.atualizarProdutosQuantidadeDAO(pModelProdutos);
     }
 

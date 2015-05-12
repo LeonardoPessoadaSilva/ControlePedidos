@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 
 
-public class ModelPedidos {
+public class Pedidos {
 
     private int codigo;
     private int produtosCodigo;
@@ -14,10 +14,10 @@ public class ModelPedidos {
     private Double valor;
     private Float valorTotal;
     private Float desconto;
-    private ArrayList<ModelPedidos> listamModelVendases;
+    private ArrayList<Pedidos> listamModelVendases;
 
     
-    public ModelPedidos(){}
+    public Pedidos(){}
 
     
     public void setCodigo(int pCodigo){
@@ -80,12 +80,12 @@ public class ModelPedidos {
     }
 
    
-    public ArrayList<ModelPedidos> getListamModelVendases() {
+    public ArrayList<Pedidos> getListamModelVendases() {
         return listamModelVendases;
     }
 
     
-    public void setListamModelVendases(ArrayList<ModelPedidos> listamModelVendases) {
+    public void setListamModelVendases(ArrayList<Pedidos> listamModelVendases) {
         this.listamModelVendases = listamModelVendases;
     }
 

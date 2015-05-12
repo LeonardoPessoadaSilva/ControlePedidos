@@ -1,6 +1,6 @@
-package br.com.scp.controller;
+package br.com.scp.facade;
 
-import br.com.scp.model.ModelPedidos;
+import br.com.scp.model.Pedidos;
 import br.com.scp.DAO.DAOPedidos;
 import java.util.ArrayList;
 
@@ -12,27 +12,27 @@ public class ControllerPedidos {
     
 
     
-    public int salvarVendasController(ModelPedidos pModelVendas){
+    public int salvarVendasController(Pedidos pModelVendas){
         return this.daoVendas.salvarVendasDAO(pModelVendas);
     }
 
     
-    public ModelPedidos getVendasController(int pCodigo){
+    public Pedidos getVendasController(int pCodigo){
         return this.daoVendas.getVendasDAO(pCodigo);
     }
 
    
-    public ArrayList<ModelPedidos> getListaVendasController(){
+    public ArrayList<Pedidos> getListaVendasController(){
         return this.daoVendas.getListaVendasDAO();
     }
 
     
-    public ArrayList<ModelPedidos> getListaVendasController(int pCodigo){
+    public ArrayList<Pedidos> getListaVendasController(int pCodigo){
         return this.daoVendas.getListaVendasDAO(pCodigo);
     }
     
     
-    public boolean atualizarVendasController(ModelPedidos pModelVendas){
+    public boolean atualizarVendasController(Pedidos pModelVendas){
         return this.daoVendas.atualizarVendasDAO(pModelVendas);
     }
 
@@ -41,7 +41,7 @@ public class ControllerPedidos {
         return this.daoVendas.excluirVendasDAO(pCodigo);
     }
 
-    public boolean salvarVendasProdutosController(ModelPedidos modelVendas) {
+    public boolean salvarVendasProdutosController(Pedidos modelVendas) {
         return this.daoVendas.salvarProdutosVendasDAO(modelVendas);
     }
 

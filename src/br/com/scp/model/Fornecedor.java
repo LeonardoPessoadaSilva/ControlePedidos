@@ -1,6 +1,6 @@
 package br.com.scp.model;
 
-public class ModelFornecedor {
+public class Fornecedor {
 
     private int codigo;
     private String nome;
@@ -12,7 +12,7 @@ public class ModelFornecedor {
     private String telefone;
 
     
-    public ModelFornecedor(){}
+    public Fornecedor(){}
 
     
     public void setCodigo(int pCodigo){

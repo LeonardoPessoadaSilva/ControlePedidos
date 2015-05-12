@@ -1,15 +1,15 @@
 
 package br.com.scp.view;
 
-import br.com.scp.controller.ControllerFornecedor;
+import br.com.scp.facade.ControllerFornecedor;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import br.com.scp.model.ModelFornecedor;
+import br.com.scp.model.Fornecedor;
 
 public class ViewFornecedor extends javax.swing.JFrame {
-    ModelFornecedor modelFornecedor = new ModelFornecedor();
-    ArrayList<ModelFornecedor> listModelFornecedors = new ArrayList<>();
+    Fornecedor modelFornecedor = new Fornecedor();
+    ArrayList<Fornecedor> listModelFornecedors = new ArrayList<>();
     ControllerFornecedor controllerFornecedor = new ControllerFornecedor();
     String tipoCadastro;
     

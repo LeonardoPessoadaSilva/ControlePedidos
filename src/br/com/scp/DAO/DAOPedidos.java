@@ -1,13 +1,13 @@
 package br.com.scp.DAO;
 
 import br.com.scp.conexoes.ConnectionFactory;
-import br.com.scp.model.ModelPedidos;
+import br.com.scp.model.Pedidos;
 import java.util.ArrayList;
 
 public class DAOPedidos extends ConnectionFactory {
 
     
-    public int salvarVendasDAO(ModelPedidos pModelVendas) {
+    public int salvarVendasDAO(Pedidos pModelVendas) {
         try {
             this.conectar();
                 return this.insertSQL(
@@ -33,7 +33,7 @@ public class DAOPedidos extends ConnectionFactory {
 
     
    
-    public boolean salvarProdutosVendasDAO(ModelPedidos pModelVendas) {
+    public boolean salvarProdutosVendasDAO(Pedidos pModelVendas) {
         try {
             this.conectar();
             int sizeLista = pModelVendas.getListamModelVendases().size();
@@ -61,8 +61,8 @@ public class DAOPedidos extends ConnectionFactory {
     }
     
    
-    public ModelPedidos getVendasDAO(int pCodigo){
-        ModelPedidos modelVendas = new ModelPedidos();
+    public Pedidos getVendasDAO(int pCodigo){
+        Pedidos modelVendas = new Pedidos();
         try {
             this.conectar();
             this.executarSQL(
@@ -95,9 +95,9 @@ public class DAOPedidos extends ConnectionFactory {
     }
 
     
-    public ArrayList<ModelPedidos> getListaVendasDAO(){
-        ArrayList<ModelPedidos> listamodelVendas = new ArrayList();
-        ModelPedidos modelVendas = new ModelPedidos();
+    public ArrayList<Pedidos> getListaVendasDAO(){
+        ArrayList<Pedidos> listamodelVendas = new ArrayList();
+        Pedidos modelVendas = new Pedidos();
         try {
             this.conectar();
             this.executarSQL(
@@ -111,7 +111,7 @@ public class DAOPedidos extends ConnectionFactory {
             );
 
             while(this.getResultSet().next()){
-                modelVendas = new ModelPedidos();
+                modelVendas = new Pedidos();
                 modelVendas.setCodigo(this.getResultSet().getInt(1));
                 modelVendas.setClientesCodigo(this.getResultSet().getInt(2));
                 modelVendas.setDataVenda(this.getResultSet().getDate(3));
@@ -126,9 +126,9 @@ public class DAOPedidos extends ConnectionFactory {
     }
     
    
-    public ArrayList<ModelPedidos> getListaVendasDAO(int pCodigo){
-        ArrayList<ModelPedidos> listamodelVendas = new ArrayList();
-        ModelPedidos modelVendas = new ModelPedidos();
+    public ArrayList<Pedidos> getListaVendasDAO(int pCodigo){
+        ArrayList<Pedidos> listamodelVendas = new ArrayList();
+        Pedidos modelVendas = new Pedidos();
         try {
             this.conectar();
             this.executarSQL(
@@ -142,7 +142,7 @@ public class DAOPedidos extends ConnectionFactory {
             );
 
             while(this.getResultSet().next()){
-                modelVendas = new ModelPedidos();
+                modelVendas = new Pedidos();
                 modelVendas.setProdutosCodigo(this.getResultSet().getInt(1));
                 modelVendas.setCodigo(this.getResultSet().getInt(2));
                 modelVendas.setQuantidade(this.getResultSet().getInt(3));
@@ -157,7 +157,7 @@ public class DAOPedidos extends ConnectionFactory {
     }
 
    
-    public boolean atualizarVendasDAO(ModelPedidos pModelVendas){
+    public boolean atualizarVendasDAO(Pedidos pModelVendas){
         try {
             this.conectar();
             this.executarUpdateSQL(

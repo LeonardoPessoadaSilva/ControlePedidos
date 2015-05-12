@@ -1,13 +1,13 @@
 package br.com.scp.DAO;
 
 import br.com.scp.conexoes.ConnectionFactory;
-import br.com.scp.model.ModelFornecedor;
+import br.com.scp.model.Fornecedor;
 import java.util.ArrayList;
 
 public class DAOFornecedor extends ConnectionFactory {
 
     
-    public int salvarFornecedorDAO(ModelFornecedor pModelFornecedor){
+    public int salvarFornecedorDAO(Fornecedor pModelFornecedor){
         try {
             this.conectar();
             return this.insertSQL(
@@ -38,8 +38,8 @@ public class DAOFornecedor extends ConnectionFactory {
     }
 
    
-    public ModelFornecedor getFornecedorDAO(int pCodigo){
-        ModelFornecedor modelFornecedor = new ModelFornecedor();
+    public Fornecedor getFornecedorDAO(int pCodigo){
+        Fornecedor modelFornecedor = new Fornecedor();
         try {
             this.conectar();
             this.executarSQL(
@@ -78,8 +78,8 @@ public class DAOFornecedor extends ConnectionFactory {
     }
     
     
-    public ModelFornecedor getFornecedorDAO(String pNome){
-        ModelFornecedor modelFornecedor = new ModelFornecedor();
+    public Fornecedor getFornecedorDAO(String pNome){
+        Fornecedor modelFornecedor = new Fornecedor();
         try {
             this.conectar();
             this.executarSQL(
@@ -118,9 +118,9 @@ public class DAOFornecedor extends ConnectionFactory {
     }
 
     
-    public ArrayList<ModelFornecedor> getListaFornecedorDAO(){
-        ArrayList<ModelFornecedor> listamodelFornecedor = new ArrayList();
-        ModelFornecedor modelFornecedor = new ModelFornecedor();
+    public ArrayList<Fornecedor> getListaFornecedorDAO(){
+        ArrayList<Fornecedor> listamodelFornecedor = new ArrayList();
+        Fornecedor modelFornecedor = new Fornecedor();
         try {
             this.conectar();
             this.executarSQL(
@@ -139,7 +139,7 @@ public class DAOFornecedor extends ConnectionFactory {
             );
 
             while(this.getResultSet().next()){
-                modelFornecedor = new ModelFornecedor();
+                modelFornecedor = new Fornecedor();
                 modelFornecedor.setCodigo(this.getResultSet().getInt(1));
                 modelFornecedor.setNome(this.getResultSet().getString(2));
                 modelFornecedor.setEndereco(this.getResultSet().getString(3));
@@ -159,7 +159,7 @@ public class DAOFornecedor extends ConnectionFactory {
     }
 
     
-    public boolean atualizarFornecedorDAO(ModelFornecedor pModelFornecedor){
+    public boolean atualizarFornecedorDAO(Fornecedor pModelFornecedor){
         try {
             this.conectar();
             this.executarUpdateSQL(

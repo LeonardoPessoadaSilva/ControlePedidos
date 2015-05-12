@@ -1,6 +1,6 @@
-package br.com.scp.controller;
+package br.com.scp.facade;
 
-import br.com.scp.model.ModelCliente;
+import br.com.scp.model.Cliente;
 import br.com.scp.DAO.DAOCliente;
 import java.util.ArrayList;
 
@@ -10,29 +10,28 @@ public class ControllerCliente {
 
     private DAOCliente daoCliente = new DAOCliente();
     
-
     
-    public int salvarClienteController(ModelCliente pModelCliente){
+    public int salvarClienteController(Cliente pModelCliente){
         return this.daoCliente.salvarClienteDAO(pModelCliente);
     }
 
    
-    public ModelCliente getClienteController(int pCodigo){
+    public Cliente getClienteController(int pCodigo){
         return this.daoCliente.getClienteDAO(pCodigo);
     }
     
     
-    public ModelCliente getClienteController(String pNome){
+    public Cliente getClienteController(String pNome){
         return this.daoCliente.getClienteDAO(pNome);
     }
 
     
-    public ArrayList<ModelCliente> getListaClienteController(){
+    public ArrayList<Cliente> getListaClienteController(){
         return this.daoCliente.getListaClienteDAO();
     }
 
     
-    public boolean atualizarClienteController(ModelCliente pModelCliente){
+    public boolean atualizarClienteController(Cliente pModelCliente){
         return this.daoCliente.atualizarClienteDAO(pModelCliente);
     }
 

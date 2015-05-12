@@ -1,21 +1,21 @@
 
 package br.com.scp.view;
 
-import br.com.scp.controller.ControllerCliente;
+import br.com.scp.facade.ControllerCliente;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import br.com.scp.model.ModelCliente;
+import br.com.scp.model.Cliente;
 
 
 public class ViewClientes extends javax.swing.JFrame {
     
-    ModelCliente modelCliente = new ModelCliente();
+    Cliente modelCliente = new Cliente();
     ControllerCliente controllerCliente = new ControllerCliente();
-    ArrayList<ModelCliente> listaModelCliente = new ArrayList<>();
+    ArrayList<Cliente> listaModelCliente = new ArrayList<>();
     String tipoCadastro;
     
     

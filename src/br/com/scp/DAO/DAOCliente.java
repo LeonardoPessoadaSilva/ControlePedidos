@@ -1,13 +1,13 @@
 package br.com.scp.DAO;
 
 import br.com.scp.conexoes.ConnectionFactory;
-import br.com.scp.model.ModelCliente;
+import br.com.scp.model.Cliente;
 import java.util.ArrayList;
 
 public class DAOCliente extends ConnectionFactory {
 
    
-    public int salvarClienteDAO(ModelCliente pModelCliente){
+    public int salvarClienteDAO(Cliente pModelCliente){
         try {
             this.conectar();
             return this.insertSQL(
@@ -38,8 +38,8 @@ public class DAOCliente extends ConnectionFactory {
     }
 
     
-    public ModelCliente getClienteDAO(int pCodigo){
-        ModelCliente modelCliente = new ModelCliente();
+    public Cliente getClienteDAO(int pCodigo){
+        Cliente modelCliente = new Cliente();
         try {
             this.conectar();
             this.executarSQL(
@@ -78,8 +78,8 @@ public class DAOCliente extends ConnectionFactory {
     }
     
    
-    public ModelCliente getClienteDAO(String pNome){
-        ModelCliente modelCliente = new ModelCliente();
+    public Cliente getClienteDAO(String pNome){
+        Cliente modelCliente = new Cliente();
         try {
             this.conectar();
             this.executarSQL(
@@ -119,9 +119,9 @@ public class DAOCliente extends ConnectionFactory {
 
 
    
-    public ArrayList<ModelCliente> getListaClienteDAO(){
-        ArrayList<ModelCliente> listamodelCliente = new ArrayList();
-        ModelCliente modelCliente = new ModelCliente();
+    public ArrayList<Cliente> getListaClienteDAO(){
+        ArrayList<Cliente> listamodelCliente = new ArrayList();
+        Cliente modelCliente = new Cliente();
         try {
             this.conectar();
             this.executarSQL(
@@ -140,7 +140,7 @@ public class DAOCliente extends ConnectionFactory {
             );
 
             while(this.getResultSet().next()){
-                modelCliente = new ModelCliente();
+                modelCliente = new Cliente();
                 modelCliente.setCodigo(this.getResultSet().getInt(1));
                 modelCliente.setNome(this.getResultSet().getString(2));
                 modelCliente.setEndereco(this.getResultSet().getString(3));
@@ -160,7 +160,7 @@ public class DAOCliente extends ConnectionFactory {
     }
 
     
-    public boolean atualizarClienteDAO(ModelCliente pModelCliente){
+    public boolean atualizarClienteDAO(Cliente pModelCliente){
         try {
             this.conectar();
             this.executarUpdateSQL(
