@@ -53,7 +53,6 @@ public class ViewFornecedor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Fornecedores");
-        setAlwaysOnTop(true);
         setResizable(false);
 
         btPesquisarFornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/18x18/Search.png"))); // NOI18N
