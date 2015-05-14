@@ -58,7 +58,6 @@ public class ViewClientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Clientes");
-        setAlwaysOnTop(true);
         setResizable(false);
 
         btPesquisaCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/18x18/Search.png"))); // NOI18N
