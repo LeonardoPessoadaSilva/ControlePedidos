@@ -1,5 +1,4 @@
 
-
 package br.com.scp.util;
 
 import java.text.DateFormat;
@@ -8,12 +7,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
- class SCPDatas {
 
-   
+
+public class SCPDatas {
+
+    
     public String addBarras(String pString){
         String dataRetorno = new String();
-        
+        //substitui o '-' por '\'
         if(pString != null){
             dataRetorno += pString.charAt(8);
             dataRetorno += pString.charAt(9);
@@ -52,8 +53,7 @@ import java.util.GregorianCalendar;
 
         return c.getTime();
     }
-    
- 
+   
    public Date adddMes(Date dataAtual, int quantidadeMes){
         Calendar c = Calendar.getInstance();
         c.setTime(dataAtual);
@@ -71,7 +71,7 @@ import java.util.GregorianCalendar;
         return (int) (((dt2 - dt1) / 86400000)+1); 
     }
 
-   
+    
     public String retornarDataHora(){
         Date date = new Date(); 
         SimpleDateFormat teste = new SimpleDateFormat("dd/MM/yyyy hh:mm");	
@@ -79,7 +79,7 @@ import java.util.GregorianCalendar;
     }	
 
     
-
+ 
     public java.sql.Date converterDataStringParaDate(String data) throws Exception {   
         if (data == null || data.equals(""))  
             return null;  
@@ -94,7 +94,6 @@ import java.util.GregorianCalendar;
         return date;  
     }  
    
- 
      public java.sql.Date converterDataStringParaDateUS(String data) throws Exception {   
         if (data == null || data.equals(""))  
             return null;  
@@ -108,7 +107,6 @@ import java.util.GregorianCalendar;
         }  
         return date;  
     }   
-    
     
      public java.sql.Date converterDataParaDateUS(Date pData) throws Exception {   
         SimpleDateFormat formatarDate = new SimpleDateFormat("yyyy/MM/dd");
@@ -126,7 +124,7 @@ import java.util.GregorianCalendar;
         return date;  
     }   
      
-    
+   
     public String formatarData(Date pData){
     
         SimpleDateFormat formatarDate = new SimpleDateFormat("dd/MM/yyyy");    

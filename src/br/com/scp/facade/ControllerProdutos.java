@@ -2,6 +2,7 @@ package br.com.scp.facade;
 
 import br.com.scp.model.Produtos;
 import br.com.scp.DAO.DAOProdutos;
+import br.com.scp.relatorios.DAORelatorios;
 import java.util.ArrayList;
 
 
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 public class ControllerProdutos {
 
     private DAOProdutos daoProdutos = new DAOProdutos();
+     private DAORelatorios dAORelatorios = new DAORelatorios();
    
     
     public int salvarProdutosController(Produtos pModelProdutos){
@@ -45,6 +47,8 @@ public class ControllerProdutos {
         return this.daoProdutos.atualizarProdutosQuantidadeDAO(pModelProdutos);
     }
 
- 
+    public boolean gerarRelatorioProdutos() {
+        return this.dAORelatorios.gerarRelatorioProdutos();
+    }
     
 }

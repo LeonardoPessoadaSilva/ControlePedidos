@@ -6,21 +6,19 @@ import java.util.ArrayList;
 
 public class DAOPedidos extends ConnectionFactory {
 
-    
-    public int salvarVendasDAO(Pedidos pModelVendas) {
+    public int salvarPedidosDAO(Pedidos pModelPedidos) {
         try {
             this.conectar();
-                return this.insertSQL(
-                    "INSERT INTO vendas ("
+                return this.insertSQL("INSERT INTO pedidos ("
                     + "clientes_codigo,"
-                    + "data_venda,"
+                    + "data_pedido,"
                     + "valor_total,"
                     + "desconto "
                     + ") VALUES ("
-                    + "'" + pModelVendas.getClientesCodigo() + "',"
-                    + "'" + pModelVendas.getDataVenda() + "',"
-                    + "'" + pModelVendas.getValorTotal() + "',"
-                    + "'" + pModelVendas.getDesconto() + "'"
+                    + "'" + pModelPedidos.getClientesCodigo() + "',"
+                    + "'" + pModelPedidos.getDataPedido() + "',"
+                    + "'" + pModelPedidos.getValorTotal() + "',"
+                    + "'" + pModelPedidos.getDesconto() + "'"
                     + ")RETURNING codigo;"
             );
         } catch (Exception e) {
@@ -33,21 +31,20 @@ public class DAOPedidos extends ConnectionFactory {
 
     
    
-    public boolean salvarProdutosVendasDAO(Pedidos pModelVendas) {
+    public boolean salvarProdutosPedidosDAO(Pedidos pModelPedidos) {
         try {
             this.conectar();
-            int sizeLista = pModelVendas.getListamModelVendases().size();
+            int sizeLista = pModelPedidos.getListamModelPedidoses().size();
             for (int i = 0; i < sizeLista; i++) {
-                this.insertSQL(
-                        "insert into VENDAS_PRODUTO "
+                this.insertSQL("insert into PEDIDOS_PRODUTO "
                         + "( "
                         + "CODIGO_PRODUTO"
-                        + ", CODIGO_VENDA "
+                        + ", CODIGO_PEDIDO "
                         + ", QUANTIDADE) "
                         + " VALUES ("
-                        + "'" + pModelVendas.getListamModelVendases().get(i).getProdutosCodigo() + "',"
-                        + "'" + pModelVendas.getCodigo()+ "',"
-                        + "'" + pModelVendas.getListamModelVendases().get(i).getQuantidade() + "'"
+                        + "'" + pModelPedidos.getListamModelPedidoses().get(i).getProdutosCodigo() + "',"
+                        + "'" + pModelPedidos.getCodigo()+ "',"
+                        + "'" + pModelPedidos.getListamModelPedidoses().get(i).getQuantidade() + "'"
                         + ") RETURNING codigo;"
                 );
             }
@@ -60,9 +57,9 @@ public class DAOPedidos extends ConnectionFactory {
         }
     }
     
-   
-    public Pedidos getVendasDAO(int pCodigo){
-        Pedidos modelVendas = new Pedidos();
+    
+    public Pedidos getPedidosDAO(int pCodigo){
+        Pedidos modelPedidos = new Pedidos();
         try {
             this.conectar();
             this.executarSQL(
@@ -70,105 +67,107 @@ public class DAOPedidos extends ConnectionFactory {
                     + "codigo,"
                     + "valor_total,"
                     + "clientes_codigo,"
-                    + "data_venda,"
+                    + "data_pedido,"
                     + "desconto"
                  + " FROM"
-                     + " vendas"
+                     + " pedidos"
                  + " WHERE"
                      + " codigo = '" + pCodigo + "'"
                 + ";"
             );
 
             while(this.getResultSet().next()){
-                modelVendas.setCodigo(this.getResultSet().getInt(1));
-                modelVendas.setValorTotal(this.getResultSet().getFloat(2));
-                modelVendas.setClientesCodigo(this.getResultSet().getInt(3));
-                modelVendas.setDataVenda(this.getResultSet().getDate(4));
-                modelVendas.setDesconto(this.getResultSet().getFloat(5));
+                modelPedidos.setCodigo(this.getResultSet().getInt(1));
+                modelPedidos.setValorTotal(this.getResultSet().getFloat(2));
+                modelPedidos.setClientesCodigo(this.getResultSet().getInt(3));
+                modelPedidos.setDataPedido(this.getResultSet().getDate(4));
+                modelPedidos.setDesconto(this.getResultSet().getFloat(5));
             }
         }catch(Exception e){
             e.printStackTrace();
         }finally{
             this.fecharConexao();
         }
-        return modelVendas;
+        return modelPedidos;
     }
 
-    
-    public ArrayList<Pedidos> getListaVendasDAO(){
-        ArrayList<Pedidos> listamodelVendas = new ArrayList();
-        Pedidos modelVendas = new Pedidos();
+   
+    public ArrayList<Pedidos> getListaPedidosDAO(){
+        ArrayList<Pedidos> listamodelPedidos = new ArrayList();
+        Pedidos modelPedidos = new Pedidos();
         try {
             this.conectar();
             this.executarSQL(
                 "SELECT "
                     + "codigo,"
                     + "clientes_codigo,"
-                    + "data_venda "
+                    + "data_pedido "
                  + " FROM"
-                     + " vendas"
+                     + " pedidos"
                 + ";"
             );
 
             while(this.getResultSet().next()){
-                modelVendas = new Pedidos();
-                modelVendas.setCodigo(this.getResultSet().getInt(1));
-                modelVendas.setClientesCodigo(this.getResultSet().getInt(2));
-                modelVendas.setDataVenda(this.getResultSet().getDate(3));
-                listamodelVendas.add(modelVendas);
+                modelPedidos = new Pedidos();
+                modelPedidos.setCodigo(this.getResultSet().getInt(1));
+                modelPedidos.setClientesCodigo(this.getResultSet().getInt(2));
+                modelPedidos.setDataPedido(this.getResultSet().getDate(3));
+                listamodelPedidos.add(modelPedidos);
             }
         }catch(Exception e){
             e.printStackTrace();
         }finally{
             this.fecharConexao();
         }
-        return listamodelVendas;
+        return listamodelPedidos;
     }
     
-   
-    public ArrayList<Pedidos> getListaVendasDAO(int pCodigo){
-        ArrayList<Pedidos> listamodelVendas = new ArrayList();
-        Pedidos modelVendas = new Pedidos();
+    /**
+    * recupera uma lista de Vendas
+        * return ArrayList
+    */
+    public ArrayList<Pedidos> getListaPedidosDAO(int pCodigo){
+        ArrayList<Pedidos> listamodelPedidos = new ArrayList();
+        Pedidos modelPedidos = new Pedidos();
         try {
             this.conectar();
             this.executarSQL(
                     "SELECT "
                     + "codigo_produto,"
-                    + "codigo_venda,"
+                    + "codigo_pedido,"
                     + "quantidade "
                     + " FROM"
-                    + " vendas_produto WHERE codigo_venda = '" + pCodigo + "'"
+                    + " pedidos_produto WHERE codigo_pedido = '" + pCodigo + "'"
                     + ";"
             );
 
             while(this.getResultSet().next()){
-                modelVendas = new Pedidos();
-                modelVendas.setProdutosCodigo(this.getResultSet().getInt(1));
-                modelVendas.setCodigo(this.getResultSet().getInt(2));
-                modelVendas.setQuantidade(this.getResultSet().getInt(3));
-                listamodelVendas.add(modelVendas);
+                modelPedidos = new Pedidos();
+                modelPedidos.setProdutosCodigo(this.getResultSet().getInt(1));
+                modelPedidos.setCodigo(this.getResultSet().getInt(2));
+                modelPedidos.setQuantidade(this.getResultSet().getInt(3));
+                listamodelPedidos.add(modelPedidos);
             }
         }catch(Exception e){
             e.printStackTrace();
         }finally{
             this.fecharConexao();
         }
-        return listamodelVendas;
+        return listamodelPedidos;
     }
 
-   
-    public boolean atualizarVendasDAO(Pedidos pModelVendas){
+    
+    public boolean atualizarPedidosDAO(Pedidos pModelPedidos){
         try {
             this.conectar();
-            this.executarUpdateSQL(
-                "UPDATE vendas SET "
-                    + "codigo = '" + pModelVendas.getCodigo() + "',"
-                    + "valor_total = '" + pModelVendas.getValorTotal()+ "',"
-                    + "clientes_codigo = '" + pModelVendas.getClientesCodigo() + "',"
-                    + "data_venda = '" + pModelVendas.getDataVenda() + "',"
-                    + "desconto = '" + pModelVendas.getDesconto()+ "'"
+            this.executarUpdateSQL("UPDATE PEDIDOS SET "
+                    + "codigo = '" + pModelPedidos.getCodigo() + "',"
+                    + "valor_total = '" + pModelPedidos.getValorTotal()+ "',"
+                    + "clientes_codigo = '" + pModelPedidos.getClientesCodigo() + "',"
+                    + "data_pedido = '" + pModelPedidos.getDataPedido() + "',"
+                    + "desconto = '" + pModelPedidos.getDesconto()+ "'"
                 + " WHERE "
-                    + "codigo = '" + pModelVendas.getCodigo() + "'"
+                    + "codigo = '" + pModelPedidos.getCodigo() + "'"
                 + ";"
             );
             return true;
@@ -180,12 +179,12 @@ public class DAOPedidos extends ConnectionFactory {
         }
     }
 
-   
-    public boolean excluirVendasDAO(int pCodigo){
+    
+    public boolean excluirPedidosDAO(int pCodigo){
         try {
             this.conectar();
             this.executarUpdateSQL(
-                "DELETE FROM vendas "
+                "DELETE FROM PEDIDOS "
                 + " WHERE "
                     + "codigo = '" + pCodigo + "'"
                 + ";"

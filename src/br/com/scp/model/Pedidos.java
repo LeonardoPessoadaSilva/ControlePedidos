@@ -9,12 +9,12 @@ public class Pedidos {
     private int codigo;
     private int produtosCodigo;
     private int clientesCodigo;
-    private Date dataVenda;
+    private Date dataPedido;
     private int quantidade;
     private Double valor;
     private Float valorTotal;
     private Float desconto;
-    private ArrayList<Pedidos> listamModelVendases;
+    private ArrayList<Pedidos> listamModelPedidoses;
 
     
     public Pedidos(){}
@@ -47,12 +47,12 @@ public class Pedidos {
     }
 
     
-    public void setDataVenda(Date pDataVenda){
-        this.dataVenda = pDataVenda;
+    public void setDataPedido(Date pDataPedido){
+        this.dataPedido = pDataPedido;
     }
     
-    public Date getDataVenda(){
-        return this.dataVenda;
+    public Date getDataPedido(){
+        return this.dataPedido;
     }
 
     
@@ -66,7 +66,7 @@ public class Pedidos {
 
     @Override
     public String toString(){
-        return "ModelVendas {" + "::codigo = " + this.codigo + "::produtosCodigo = " + this.produtosCodigo + "::clientesCodigo = " + this.clientesCodigo + "::dataVenda = " + this.dataVenda + "::quantidade = " + this.quantidade +  "}";
+        return "ModelPedidos {" + "::codigo = " + this.codigo + "::produtosCodigo = " + this.produtosCodigo + "::clientesCodigo = " + this.clientesCodigo + "::dataPedido = " + this.dataPedido + "::quantidade = " + this.quantidade +  "}";
     }
 
     
@@ -80,13 +80,13 @@ public class Pedidos {
     }
 
    
-    public ArrayList<Pedidos> getListamModelVendases() {
-        return listamModelVendases;
+    public ArrayList<Pedidos> getListamModelPedidoses() {
+        return listamModelPedidoses;
     }
 
     
-    public void setListamModelVendases(ArrayList<Pedidos> listamModelVendases) {
-        this.listamModelVendases = listamModelVendases;
+    public void setListamModelVendases(ArrayList<Pedidos> listamModelPedidoses) {
+        this.listamModelPedidoses = listamModelPedidoses;
     }
 
     

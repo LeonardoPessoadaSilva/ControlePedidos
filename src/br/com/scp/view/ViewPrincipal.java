@@ -101,6 +101,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         btRegistrarVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/24x24/Dollar.png"))); // NOI18N
         btRegistrarVenda.setText("Registrar Pedido");
+        btRegistrarVenda.setActionCommand("RegistrarPedido");
         btRegistrarVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btRegistrarVendaActionPerformed(evt);
@@ -285,15 +286,17 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiFornecedorActionPerformed
 
     private void mnuRegistrarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuRegistrarVendaActionPerformed
-       
+        new ViewPedido().setVisible(true);
     }//GEN-LAST:event_mnuRegistrarVendaActionPerformed
 
     private void jmiConsultarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiConsultarVendaActionPerformed
-      
+        ViewPedido venda = new ViewPedido();
+        venda.setViewConsultarPedidos();
+        venda.setVisible(true);
     }//GEN-LAST:event_jmiConsultarVendaActionPerformed
 
     private void btRegistrarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegistrarVendaActionPerformed
-   
+       new ViewPedido().setVisible(true);   
     }//GEN-LAST:event_btRegistrarVendaActionPerformed
 
     private void btConsultarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultarVendaActionPerformed
@@ -313,15 +316,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btClientesActionPerformed
 
     private void jmiRelClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelClientesActionPerformed
-       
+        ControllerCliente controllerCliente = new ControllerCliente();
+        controllerCliente.gerarRelatorioCliente();       
     }//GEN-LAST:event_jmiRelClientesActionPerformed
 
     private void jmiRelFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelFornecedorActionPerformed
-        
+        ControllerFornecedor controllerFornecedor = new ControllerFornecedor();
+        controllerFornecedor.gerarRelatorioFornecedor();
     }//GEN-LAST:event_jmiRelFornecedorActionPerformed
 
     private void jmiRelProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRelProdutosActionPerformed
-        
+         ControllerProdutos controllerProdutos = new ControllerProdutos();
+         controllerProdutos.gerarRelatorioProdutos();
     }//GEN-LAST:event_jmiRelProdutosActionPerformed
 
    
